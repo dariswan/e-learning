@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css"/>
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/jquery.mobile-1.4.5.js" type="text/javascript"></script>
+	<script lang="javascript" type="text/javascript">
+		function exitFromApp()
+             {
+                navigator.app.exitApp();
+             }
+
+		
+	</script>
+	
+	<style>
+		h1{
+			font-size: 50pt;
+			margin: 2pt;
+		}
+		p,h1{
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div data-role="page" id="index">
+		<div data-role="header">
+			<h1> HALAMAN UTAMA </h1>
+		</div>
+		<div role="main" class="ui-content">
+			<div class="ui-field-contain">
+				<h1>Halo!</h1>
+			  <p>Selamat datang di portal sekolah abc</p>
+			  <p>login sebagai :</p>
+			</div>
+			<div class="ui-grid-a ui-responsive">
+				<div class="ui-block-a" data-role="button"><input type="button" value="GURU" onclick="window.location = '#logguru';"></div>
+			  <div class="ui-block-b" data-role="button"><input type="button" value="MURID" onclick="window.location = '#logsiswa';"></div>
+			</div>
+			<div class="ui-grid-solo">
+			    <div class="ui-block-a"><input type="button" value="KELUAR" onclick="exitFromApp()" ></div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h6>Sistem Informasi Akademik Sekolah Dasar</h6>
+		</div>
+	</div>
+	
+	
+	<!-- GURU----------------- -->
+	<div data-role="page" id="logguru">
+		<div data-role="header"><h2>LOGIN GURU</h2></div>
+		<div role="main" class="ui-content">
+			<div class="ui-field-contain">
+				<h1>Halo!</h1>
+			  <p>Selamat datang di portal sekolah abc</p>
+			  <p>Silahkan lakukan login untuk masuk sebagai Guru</p>
+			</div>
+			<form method="POST">
+			<div class="ui-field-contain" >
+				<input name="username" id="nip" placeholder="username" value="" type="text" data-mini="true">
+				<input name="password" id="password" placeholder="password" value="" type="password" data-mini="true">
+			</div>
+			<div class="ui-grid-a ui-responsive ">
+				<div class="ui-block-a" data-role="button"><input id="loggr" type="submit" value="MASUK"></div>
+				<div class="ui-block-b" data-role="button"><input type="button" value="KEMBALI" onclick="window.location = '#index';"></div>
+			</div>
+			</form>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h6>Sistem Informasi Akademik Sekolah Dasar</h6>
+		</div>
+	</div>
+	<script src="js/app.js" type="text/javascript"></script>
+	<script> Application.initApplication(); </script>
+	
+	<!-- ORTU----------------- -->
+	<div data-role="page" id="logsiswa">
+		<div data-role="header"><h2>LOGIN WALI MURID</h2></div>
+		<div role="main" class="ui-content">
+			<div class="ui-field-contain">
+				<h1>Halo!</h1>
+			  <p>Selamat datang di portal sekolah abc</p>
+			  <p>Silahkan lakukan login untuk masuk sebagai Wali / Orang tua siswa</p>
+			</div>
+			<div class="ui-field-contain">
+				<input name="Username" id="Username" placeholder="Username" value="" type="text" data-mini="true">
+				<input name="Password" id="Password" placeholder="Password" value="" type="password" data-mini="true">
+			</div>
+			<div class="ui-grid-a ui-responsive">
+				<div class="ui-block-a" data-role="button"><input type="submit" value="MASUK" onclick="window.location = '#menus';"></div>
+				<div class="ui-block-b" data-role="button"><input type="button" value="KEMBALI" onclick="window.location = '#index';"></div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h6>Sistem Informasi Akademik Sekolah Dasar</h6>
+		</div>
+    </div>
+    <!--
+        WALI MURID
+    -->
+    <!--Menu---------------------------------------------------------------------------------------------------------------------------------------->
+	<div data-role="page" id="menus">
+		<div data-role="header"><h2>MENU SISWA</h2></div>
+		<div role="main" class="ui-content">
+			<div class="ui-field-contain">
+				<h1>Silahkan</h1>
+			  <p>pilih menu yang ini dituju!</p>
+			</div>
+			<div class="ui-grid-a ui-responsive">
+				<button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-info" onclick="window.location = '#pengumumans';">Pengumuman</button>
+				<button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-check" onclick="window.location = '#nilais';">Nilai</button>
+				<button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-clock" onclick="window.location = '#jadwals';">Jadwal Pelajaran</button>
+				<button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-tag" onclick="window.location = '#tagihans';">Tagihan</button>
+				<button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-forbidden" onclick="window.location = '#pls';">Pelanggaran</button>
+				<button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-edit" onclick="window.location = '#UBs';">Edit Data Diri</button>
+				<button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-back" onclick="window.location = 'index.html#logsiswa';">LogOut</button>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h6>Sistem Informasi Akademik Sekolah Dasar</h6>
+		</div>
+	</div>
+
+
+
+<!--Pengumuman---------------------------------------------------------------------------------------------------------------------------------------->
+	<div data-role="page" id="pengumumans">
+		<div data-role="header">
+			<button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-home" onclick="window.location = 'index.html#menus';">menu</button>
+			<h2>PENGUMUMAN</h2>
+		</div>
+		<div role="main" class="ui-content">
+			<div role="main" class="ui-content">
+				<div class="main">
+					<h4><b>List Pengumuman</b></h4>
+					<ol data-role="listview">
+				    <li>Pengumuman 1</li>
+						<li>Pengumuman 2</li>
+						<li>Pengumuman 3</li>
+						<li>Pengumuman 4</li>
+						<li>Pengumuman 5</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h6>Sistem Informasi Akademik Sekolah Dasar</h6>
+		</div>
+	</div>
+
+
+
+<!--Nilai---------------------------------------------------------------------------------------------------------------------------------------->
+	<div data-role="page" id="nilais">
+		<div data-role="header">
+			<button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-home" onclick="window.location = 'index.html#menus';">menu</button>
+			<h2>NILAI SISWA</h2>
+		</div>
+		<div role="main" class="ui-content">
+			<div class="ui-grid-a ui-responsive">
+				<form action="/action_page.html" method="post">
+					<select name="select-custom-18" id="select-custom-18" data-native-menu="false">
+						<option>Pilih Mata Pelajaran</option>
+						<option value="1a">BIOLOGI</option>
+						<option value="1b">MATEMATIKA</option>
+						<option value="1c">SAINS</option>
+						<option value="2a">SEJARAH</option>
+						<option value="2b">BAHASA INDONESIA</option>
+						<option value="2c">BAHASA INGGRIS</option>
+						<option value="3a">KEWARGANEGARAAN</option>
+						<option value="3b">PENJASKES</option>
+						<option value="3c">BAHASA DAERAH</option>
+						<option value="4a">KOMPUTER</option>
+					</select>
+					<input type="submit" value="Tampilkan">
+				</form>
+				<br><br>
+				<h4>Jadwal Pelajaran Kelas 2A <br><br></h4>
+				<table data-role="table" id="temp-table" data-mode="reflow" class="ui-responsive table-stroke">
+					<thead>
+						<tr>
+							<th data-priority="persist">MATA PELAJARAN</th>
+	            <th data-priority="1">Bulan</th>
+							<th data-priority="1">Minggu</th>
+							<th data-priority="1">Nilai</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><th>IPA</th><td>12</td><td>1</td><td>90</td></tr>
+						<tr><th>IPS</th><td>12</td><td>3</td><td>85</td></tr>
+						<tr><th>Matematika</th><td>12</td><td>2</td><td>88</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h6>Sistem Informasi Akademik Sekolah Dasar</h6>
+		</div>
+	</div>
+
+
+
+<!--Jadwal---------------------------------------------------------------------------------------------------------------------------------------->
+	<div data-role="page" id="jadwals">
+		<div data-role="header">
+			<button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-home" onclick="window.location = 'index.html#menus';">menu</button>
+			<h2>JADWAL PELAJARAN</h2>
+		</div>
+		<div role="main" class="ui-content">
+			<div class="main">
+				<h4>Jadwal Pelajaran Kelas 2A <br><br></h4>
+				<table data-role="table" id="temp-table" data-mode="reflow" class="ui-responsive table-stroke">
+					<thead>
+						<tr>
+							<th data-priority="persist">HARI</th>
+	            <th data-priority="1">07.00-08.00</th>
+							<th data-priority="1">08.00-09.00</th>
+							<th data-priority="1">09.30-10.30</th>
+							<th data-priority="1">10.30-11.30</th>
+							<th data-priority="1">11.30-12.30</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><th>SENIN</th><td>Bahasa Daerah</td><td>Komputer</td><td>Matematika</td><td>IPA</td><td>IPS</td></tr>
+						<tr><th>SELASA</th><td>IPA</td><td>Bahasa Inggris</td><td>Komputer</td><td>Matematika</td><td>Kesenian</td></tr>
+						<tr><th>RABU</th><td>PPKn</td><td>Penjaskes</td><td>Bahasa Daerah</td><td>Komputer</td><td>IPS</td></tr>
+						<tr><th>KAMIS</th><td>IPA</td><td>Matematika</td><td>IPS</td><td>Bahasa Indonesia</td><td>Kesenian</td></tr>
+						<tr><th>JUMAT</th><td>Penjaskes</td><td>Bahasa Daerah</td><td>Sejarah</td></tr>
+						<tr><th>SABTU</th><td>IPS</td><td>Komputer</td><td>Bahasa Indonesia</td><td>Ekstrakurikuler</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h6>Sistem Informasi Akademik Sekolah Dasar</h6>
+		</div>
+	</div>
+
+
+
+<!--Tagihan---------------------------------------------------------------------------------------------------------------------------------------->
+	<div data-role="page" id="tagihans">
+		<div data-role="header">
+			<button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-home" onclick="window.location = 'index.html#menus';">menu</button>
+			<h2>TAGIHAN</h2>
+		</div>
+		<div role="main" class="ui-content">
+			<div class="main">
+				<h4>Total tagihan yang harus dibayar : <br><br></h4>
+					<input type="text" name="text-basic" id="text-basic" readonly value="Rp.500.000" align="center"><br>
+
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h6>Sistem Informasi Akademik Sekolah Dasar</h6>
+		</div>
+	</div>
+
+
+
+<!--Pelanggaran---------------------------------------------------------------------------------------------------------------------------------------->
+<div data-role="page" id="pls">
+    <div data-role="header">
+        <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-home" onclick="window.location = 'index.html#menus';">menu</button>
+        <h2>LIST PELANGGARAN</h2>
+    </div>
+    <div role="main" class="ui-content">
+        <div class="main">
+            <h4><b>List Pelanggaran Siswa</b></h4>
+            <ol data-role="listview">
+            <li>Pelanggaran 1</li>
+                <li>Pelanggaran 2</li>
+                <li>Pelanggaran 3</li>
+                <li>Pelanggaran 4</li>
+                <li>Pelanggaran 5</li>
+            </ol>
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h6>Sistem Informasi Akademik Sekolah Dasar</h6>
+    </div>
+</div>
+
+
+
+<!--UpdateBiodata---------------------------------------------------------------------------------------------------------------------------------------->
+	<div data-role="page" id="UBs">
+		<div data-role="header" >
+				<button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-home" onclick="window.location = 'index.html#menus';">menu</button>
+				<h2>Edit Biodata Siswa</h2>
+		</div>
+		<div role="main" class="ui-content">
+			<form action="/action_page.html" method="post">		
+				Nama Lengkap
+				<input type="text" name="text-basic" id="text-basic" value="">
+				Nomor HP
+				<input type="text" name="text-basic" id="text-basic" value="">
+				Alamat 
+				<input type="text" name="text-basic" id="text-basic" value="">
+				<input type="submit" value="Edit">
+			</form>
+			
+			<h4><b>Edit Password</b></h4>
+			<form action="/action_page.html" method="post">		
+				Password Baru
+				<input type="text" name="text-basic" id="text-basic" value="">
+				Ulangi Password
+				<input type="text" name="text-basic" id="text-basic" value="">
+				<input type="submit" value="Edit">
+			</form>
+		</div>
+    </div>
+
+
+
+    <!--
+        GURU
+
+    -->
+<!--Menu---------------------------------------------------------------------------------------------------------------------------------------->
+<div data-role="page" id="menug">
+    <div data-role="header"><h2>MENU GURU</h2></div>
+    <div role="main" class="ui-content">
+        <div class="ui-field-contain">
+            <h1>Silahkan</h1>
+          <p>pilih menu yang ini dituju!</p>
+        </div>
+        <div class="ui-grid-a ui-responsive">
+            <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-edit" onclick="window.location = '#pengumumang';">Update Pengumuman</button>
+            <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-edit" onclick="window.location = '#nilaig';">Update Nilai</button>
+            <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-edit" onclick="window.location = '#jadwalg';">Input Jadwal Pelajaran</button>
+            <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-edit" onclick="window.location = '#tagihang';">Perbarui Tagihan</button>
+            <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-edit" onclick="window.location = '#plg';">Masukkan Pelanggaran</button>
+            <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-edit" onclick="window.location = '#UBg';">Edit Data Diri</button>
+            <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-edit" onclick="window.location = '#mskkg';">Masukan Siswa Ke kelas</button>
+            <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-back" onclick="window.location = 'index.html#logguru';">LogOut</button>
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h6>Sistem Informasi Akademik Sekolah Dasar</h6>
+    </div>
+</div>
+<!--Update Pengumuman---------------------------------------------------------------------------------------------------------------------------------------->
+<div data-role="page" id="pengumumang">
+    <div data-role="header">
+        <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-home" onclick="window.location = 'index.html#menug';">menu</button>
+        <h2>UPDATE PENGUMUMAN</h2>
+    </div>
+    <div role="main" class="ui-content">
+        <div role="main" class="ui-content">
+                <div class="main">
+                        <h4><b>Tambahkan Pengumuman</b></h4>
+                        <form method="post">
+                            Kelas
+                            <select name="select-choice-mini" id="select-choice-mini" data-mini="true" data-inline="false">
+                                <option>Pilih Kelas</option>
+                              <option value="1a">I-A</option>
+                                <option value="1b">I-B</option>
+                                <option value="1c">I-C</option>
+                                <option value="2a">II-A</option>
+                                <option value="2b">II-B</option>
+                                <option value="2c">II-C</option>
+                                <option value="3a">III-A</option>
+                                <option value="3b">III-B</option>
+                                <option value="3c">III-C</option>
+                                <option value="4a">IV-A</option>
+                                <option value="4b">IV-B</option>
+                                <option value="4c">IV-C</option>
+                                <option value="5a">V-A</option>
+                                <option value="5b">V-B</option>
+                                <option value="5c">V-C</option>
+                                <option value="6a">VI-A</option>
+                                <option value="6b">VI-B</option>
+                                <option value="6c">VI-C</option>
+                            </select><br>
+                            Isi
+                            <textarea cols="40" rows="20" name="textarea" id="pengumuman"></textarea><br>
+                            <input type="submit" value="Kirim" id="buatP">
+                        </form>
+                    </br>
+                    <hr>
+                <h4><b>Hapus Pengumuman</b></h4>
+                <form  method="post">
+                    Kode pengumuman
+                    <input type="text" name="text-basic" id="id_pengumuman" value="">
+                    <input type="submit" value="Hapus" id="hapusP">
+					</form>
+					
+                        <br>
+                        <hr>
+					<h4><b>List Pengumuman</b></h4>
+						<table id="table_s" class="table_s"cellspacing='0' class="js-serial" border="2">
+							<thead>
+
+						  <tr>
+									<th><center>Code</center></th>
+									<th><center>Pengumuman</center></th>
+									
+						  </tr>
+
+							</thead>
+							<tbody>
+							<!-- TABEL DARI JS-->
+						  </tbody>
+						  </table>
+            </div>
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h6>Sistem Informasi Akademik Sekolah Dasar</h6>
+    </div>
+</div>
+
+
+
+<!--Update Nilai---------------------------------------------------------------------------------------------------------------------------------------->
+<div data-role="page" id="nilaig">
+    <div data-role="header">
+        <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-home" onclick="window.location = 'index.html#menug';">menu</button>
+        <h2>UPDATE NILAI SISWA</h2>
+    </div>
+    <div role="main" class="ui-content">
+            <div class="main">
+                    <div class="atas">
+                                <form action="/action_page.html" method="post">
+                                    NIS Siswa
+                                    <input type="text" name="text-basic" id="nis" value="">
+                                    Pilih Mata Pelajaran
+                                    <select name="select-choice-mini" id="mp" data-mini="true" data-inline="false">
+                                        <option></option>
+                                      	<option >BIOLOGI</option>
+                                        <option value="MATEMATIKA">MATEMATIKA</option>
+                                        <option value="SAINS">SAINS</option>
+                                        <option value="SEJARAH">SEJARAH</option>
+                                        <option value="BAHASA INDONESIA">BAHASA INDONESIA</option>
+                                        <option value="BAHASA INGGRIS">BAHASA INGGRIS</option>
+                                        <option value="KEWARGANEGARAAN">KEWARGANEGARAAN</option>
+                                        <option value="PENJASKES">PENJASKES</option>
+                                        <option value="BAHASA DAERAH">BAHASA DAERAH</option>
+                                        <option value="KOMPUTER">KOMPUTER</option>
+                                    </select>
+                                    Bulan Ke
+                                    <select name="select-choice-mini" id="bulan" data-mini="true" data-inline="false">
+                                        <option></option>
+                                      	<option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                    Minggu Ke
+                                    <select name="select-choice-mini" id="minggu" data-mini="true" data-inline="false">
+                                        <option></option>
+                                      	<option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                    Nilai
+                                    <input type="text" name="text-basic" id="nilai" value=""><br>
+									<input type="submit" value="Masukkan" id="MasukN">
+                                    <input type="submit" value="Edit" id="editN">
+                                </form>
+                    </div>
+                </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h6>Sistem Informasi Akademik Sekolah Dasar</h6>
+    </div>
+</div>
+<!--Input Jadwal Pelajaran---------------------------------------------------------------------------------------------------------------------------------------->
+<div data-role="page" id="jadwalg">
+    <div data-role="header">
+        <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-home" onclick="window.location = 'index.html#menug';">menu</button>
+        <h2>UPDATE JADWAL PELAJARAN</h2>
+    </div>
+    <div role="main" class="ui-content">
+            <div class="main">
+                
+                    <form action="/action_page.html" method="post">
+                                Pilih Kelas
+                                <select name="select-choice-mini" id="select-choice-mini2" data-mini="true" data-inline="false">
+                                    <option>Pilih Kelas</option>
+                                  	<option value="1a">I-A</option>
+                                    <option value="1b">I-B</option>
+                                    <option value="1c">I-C</option>
+                                    <option value="2a">II-A</option>
+                                    <option value="2b">II-B</option>
+                                    <option value="2c">II-C</option>
+                                    <option value="3a">III-A</option>
+                                    <option value="3b">III-B</option>
+                                    <option value="3c">III-C</option>
+                                    <option value="4a">IV-A</option>
+                                    <option value="4b">IV-B</option>
+                                    <option value="4c">IV-C</option>
+                                    <option value="5a">V-A</option>
+                                    <option value="5b">V-B</option>
+                                    <option value="5c">V-C</option>
+                                    <option value="6a">VI-A</option>
+                                    <option value="6b">VI-B</option>
+                                    <option value="6c">VI-C</option>
+                                </select>
+                                Jadwal Senin
+                                <input type="text" name="text-basic" id="text-basic" value="">
+                                Jadwal Selasa
+                                <input type="text" name="text-basic" id="text-basic" value="">
+                                Jadwal Rabu
+                                <input type="text" name="text-basic" id="text-basic" value="">
+                                Jadwal Kamis
+                                <input type="text" name="text-basic" id="text-basic" value="">
+                                Jadwal Jumat
+                                <input type="text" name="text-basic" id="text-basic" value="">
+                                Jadwal Sabtu
+                                <input type="text" name="text-basic" id="text-basic" value=""><br>
+                                <input type="submit" value="Buat"><input type="submit" value="Edit">
+                            </form>
+                
+                </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h6>Sistem Informasi Akademik Sekolah Dasar</h6>
+    </div>
+</div>
+<!--Update Tagihan---------------------------------------------------------------------------------------------------------------------------------------->
+<div data-role="page" id="tagihang">
+    <div data-role="header">
+        <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-home" onclick="window.location = 'index.html#menug';">menu</button>
+        <h2>TAGIHAN</h2>
+    </div>
+    <div role="main" class="ui-content">
+            <div class="main">
+                    <h4><b>Perbarui Tagihan</b></h4>
+                    <form action="/action_page.html" method="post">			
+                        NIS Siswa
+                        <input type="text" name="text-basic" id="text-basic" value="">
+                        Tambah Tagihan
+                        <input type="text" name="text-basic" id="text-basic" value="">
+                        <input type="submit" value="Perbarui">
+                    </form>
+                    <hr>
+                    <h4><b>Tagihan Siswa Baru</b></h4>
+                    <form action="/action_page.html" method="post">			
+                        NIS Siswa
+                        <input type="text" name="text-basic" id="text-basic" value="">
+                        Tagihan Awal
+                        <input type="text" name="text-basic" id="text-basic" value="">
+                        <input type="submit" value="Masukkan">
+                    </form>
+                    <hr>
+                    <h4><b>Konfimasi Tagihan</b></h4>
+                    <form action="/action_page.html" method="post">		
+                        NIS Siswa
+                        <input type="text" name="text-basic" id="text-basic" value="">
+                        Pembayaran
+                        <input type="text" name="text-basic" id="text-basic" value="">
+                        <input type="submit" value="Konfimasi">
+                    </form>
+                    
+                </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h6>Sistem Informasi Akademik Sekolah Dasar</h6>
+    </div>
+</div>
+<!--Masukan Pelanggaran---------------------------------------------------------------------------------------------------------------------------------------->
+<div data-role="page" id="plg">
+    <div data-role="header">
+        <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-home" onclick="window.location = 'index.html#menug';">menu</button>
+        <h2>PELANGGARAN</h2>
+    </div>
+    <div role="main" class="ui-content">
+        <div class="main">
+        <h4><b>Update Pelanggaran Siswa</b></h4>
+        <form action="/action_page.html" method="post">		
+        NIS Siswa
+        <input type="text" name="text-basic" id="text-basic" value="">
+        Masukkan Pelanggaran
+        <textarea cols="40" rows="500" name="textarea" id="textarea"></textarea><br>
+        <input type="submit" value="Masukkan">
+        </form>
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h6>Sistem Informasi Akademik Sekolah Dasar</h6>
+    </div>
+</div>
+<!--Edit Data Diri---------------------------------------------------------------------------------------------------------------------------------------->
+<div data-role="page" id="UBg">
+    <div data-role="header" >
+            <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-home" onclick="window.location = 'index.html#menug';">menu</button>
+            <h2>Edit Biodata Guru</h2>
+    </div>
+    <div role="main" class="ui-content">
+            <h4><b>Edit Biodata Guru</b></h4>
+            <form action="/action_page.html" method="post">		
+                Nama Lengkap
+                <input type="text" name="text-basic" id="text-basic" value="">
+                Nomor HP
+                <input type="text" name="text-basic" id="text-basic" value="">
+                Alamat 
+                <input type="text" name="text-basic" id="text-basic" value="">
+                <input type="submit" value="Edit">
+            </form>
+            <hr>
+            <h4><b>Edit Password</b></h4>
+            <form action="/action_page.html" method="post">		
+                Password Baru
+                <input type="text" name="text-basic" id="text-basic" value="">
+                Ulangi Password
+                <input type="text" name="text-basic" id="text-basic" value="">
+                <input type="submit" value="Edit">
+            </form>
+        </div>
+</div>
+<!--Masukan Siswa Ke kelas---------------------------------------------------------------------------------------------------------------------------------------->
+<div data-role="page" id="mskkg">
+    <div data-role="header" >
+            <button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-home" onclick="window.location = 'index.html#menug';">menu</button>
+            <h2>Edit Biodata Guru</h2>
+    </div>
+    <div role="main" class="ui-content">
+            <h4><b>Masukkan Data</b></h4>
+            <form action="/action_page.html" method="post">		
+                Nama Kelas
+                <select name="select-choice-mini" id="select-choice-mini" data-mini="true" data-inline="false">
+                    <option>Pilih Kelas</option>
+                    <option value="1a">I-A</option>
+                    <option value="1b">I-B</option>
+                    <option value="1c">I-C</option>
+                    <option value="2a">II-A</option>
+                    <option value="2b">II-B</option>
+                    <option value="2c">II-C</option>
+                    <option value="3a">III-A</option>
+                    <option value="3b">III-B</option>
+                    <option value="3c">III-C</option>
+                    <option value="4a">IV-A</option>
+                    <option value="4b">IV-B</option>
+                    <option value="4c">IV-C</option>
+                    <option value="5a">V-A</option>
+                    <option value="5b">V-B</option>
+                    <option value="5c">V-C</option>
+                    <option value="6a">VI-A</option>
+                    <option value="6b">VI-B</option>
+                    <option value="6c">VI-C</option>
+                    </select>
+                NIS Siswa
+                <input type="text" name="text-basic" id="text-basic" value="">
+                <input type="submit" value="Masukkan">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
